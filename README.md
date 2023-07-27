@@ -1,72 +1,108 @@
-# Open3D-Web-Visualiser
-A web visualiser that uses Open3D to inspect and view assets over a wireless network.
+# Open3D Web Visualiser
+
+Welcome to Open3D Web Visualiser, a highly interactive tool that leverages Open3D to inspect and view 3D assets across a wireless network.
 
 ## Dependencies
-+ open3d
-  + and its various dependencies
-+ Flask
+
+Our application primarily depends on the following Python packages:
+
+- open3d
+- Flask
 
 ## Setup 
 
+### Installing with Pip
 
-### Installing Using Pip
-    pip install open3d
-    pip install Flask
+You can quickly install the necessary dependencies using pip:
 
-# Wireless Transfer
-To transfer files between two devices over a wireless network, you will need to run the wireless transfer file on the server. Once run, there will be an HTTP link in the terminal. Enter this link into your client's browser. This will open a webpage which will display all the files in the specific directory, making them available for download. 
+```
+pip install open3d
+pip install Flask
+```
 
-# Web Visualiser
+## Wireless Transfer
 
-## Loading in Point Clouds
-When the Web Visualiser is run, it shall open a webpage which allows you to upload a .ply file. Once done, you may choose the option below to view or process the file. 
+Our application supports wireless file transfer between two devices over a network. To do this:
 
-  
-The Web Visualiser has the following functions:
-- Visualize point cloud
-- Voxel downsampling
-- Vertex normal estimation
+1. Run the wireless transfer file on the server device.
+2. A link will be displayed in the terminal.
+3. Input this link into your client device's browser.
+4. The webpage that opens will display all files available for download from the server's specified directory.
+
+Please note that the path from which files are to be downloaded must be specified in the Wireless Transfer Code.
+
+## Web Visualiser
+
+### Loading Point Clouds
+
+Run the Web Visualiser, which opens a webpage with an option to upload a .ply file. After upload, you can choose various options to view or process the file.
+
+The Web Visualiser supports these operations:
+
+- Visualise point cloud
+- Perform voxel downsampling
+- Estimate vertex normal
 - Access estimated vertex normal
 - Crop point cloud
 - Paint point cloud
-- Point cloud distance
-- Bounding volumes
-- Convex hull
-- DBSCAN clustering
-- Plane segmentation
-- Planar patch detection
-- Hidden point removal
+- Compute point cloud distance
+- Generate bounding volumes
+- Construct convex hull
+- Perform DBSCAN clustering
+- Execute plane segmentation
+- Detect planar patches
+- Remove hidden points
+
+The above functions are built using Open3D, and the details of each operation are provided below:
+
+#### Visualise Point Cloud
+
+This option allows you to load and visualize a point cloud from a file.
+
+#### Voxel Downsampling
+
+It creates a uniformly downsampled point cloud from the input cloud using a grid of voxels.
+
+#### Vertex Normal Estimation
+
+This computes the normal for each point in the point cloud by considering its neighbouring points.
+
+#### Access Estimated Vertex Normal
+
+Displays a user-defined number of estimated vertex normals from the point cloud.
+
+#### Crop Point Cloud
+
+Allows you to upload a .json file that specifies a polygon selection area for cropping the point cloud.
+
+#### Paint Point Cloud
+
+Paints the entire point cloud with a uniform colour.
+
+#### Point Cloud Distance
+
+Allows you to upload a .json file that specifies a polygon selection area for cropping the point cloud, then computes the distance from each point in the source point cloud to the closest point in the cropped point cloud.
+
+#### Bounding Volumes
+
+Identifies and displays the bounding volume of a selected portion of the point cloud.
+
+#### Convex Hull
+
+Computes and visualizes the smallest convex set that contains all the points in the point cloud.
+
+#### DBSCAN Clustering
+
+Implements the DBSCAN clustering algorithm to group local clusters in the point cloud together.
+
+#### Plane Segmentation
+
+Identifies the largest planar segment in the point cloud using the RANSAC algorithm.
+
+#### Hidden Point Removal
+
+Removes any hidden (background) points to enhance the clarity of the point cloud.
 
 
-### Visualize point cloud
-This option reads and visualises a point cloud. The functions used include: 
-- read_point_cloud: which reads a point cloud from a file. 
-- draw_geometries: which visualises the point cloud.
 
-#### Voxel downsampling
-Creates a uniformly downsampled point cloud from an input cloud. This is done by bucketing points into voxels and generating an average for all points inside a voxel.
-
-### Vertex normal estimation
-Computes the normal for each point. The function finds adjacent points and calculates the principal axis using covariance analysis. 
-
-### Access estimated vertex normal
-This function will open a webpage, prompting the user to enter the number of normal points they want to be displayed. Once entered, a new webpage will open displaying the requested number of normal points. 
-
-### Crop point cloud
-
-### Paint point cloud
-
-### Point cloud distance
-
-### Bounding volumes
-
-### Convex hull
-
-### DBSCAN clustering
-
-### Plane segmentation
-
-### Planar patch detection
-
-### Hidden point removal
-
+#### Enjoy exploring the features of our Open3D Web Visualiser!
