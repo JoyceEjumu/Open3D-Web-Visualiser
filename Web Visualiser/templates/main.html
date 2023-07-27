@@ -1,0 +1,28 @@
+<!doctype html>
+<title>OPEN3D GUI</title>
+<h1>Select a file to upload</h1>
+<h3>Accepted file types: .ply</h3>
+<h2>Once a file has been selected, chose from the options below and press submit</h2>
+
+{% if filename %}
+	<div>
+		<img src="{{ url_for('static', filename='/Images/'+filename) }}">
+	</div>
+{% endif %}
+
+<form method="post" action="/" enctype="multipart/form-data">
+    <input type="file" name="file" autocomplete="off" required><br><br><br>
+    <input type="checkbox" name="option" value="1"> Visualiser<br><br>
+    <input type="checkbox" name="option1" value="1"> Voxel Downsampling<br><br>
+    <input type="checkbox" name="option2" value="1"> Vertex Normal Estimation<br><br>
+    <input type="checkbox" name="option3" value="1"> Access Estimated Vertex Normal<br><br>
+    <input type="checkbox" name="option4" value="1"> Crop Point Cloud<br><br>
+    <input type="checkbox" name="option5" value="1"> Paint Point Cloud<br><br>
+    <input type="checkbox" name="option6" value="1"> Point Cloud Distance<br><br>
+    <input type="checkbox" name="option7" value="1"> Bounding Volumes<br><br>
+    <input type="checkbox" name="option8" value="1"> Convex Hull<br><br>
+    <input type="checkbox" name="option9" value="1"> DBSCAN Clustering<br><br>
+    <input type="checkbox" name="option10" value="1"> Plane Segmentation<br><br>
+    <input type="checkbox" name="option11" value="1"> Hidden Point Removal<br><br>
+    <input type="submit" value="Submit">
+</form>

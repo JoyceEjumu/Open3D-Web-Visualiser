@@ -1,0 +1,18 @@
+<!doctype html>
+<title>OPEN3D GUI</title>
+<h1>Select a .json file to upload</h1>
+<h3>Accepted file types: .json</h3>
+<h2>Once a file has been selected, press submit</h2>
+
+{% if filename %}
+	<div>
+		<img src="{{ url_for('static', filename='/Images/'+filename) }}">
+	</div>
+
+{% endif %}
+
+<form method="post" action="/json_upload" enctype="multipart/form-data">
+    <input type="file" name="file" autocomplete="off" required><br><br><br>
+
+    <input type="submit" value="Submit">
+</form>

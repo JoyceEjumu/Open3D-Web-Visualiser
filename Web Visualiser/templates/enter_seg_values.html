@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <form action="/enter_segmentation_values" method="POST">
+      <label for="float1">Distance Threshold: Must be a float:</label>
+      <input type="number" step="0.01" id="float1" name="float1" required><br><br>
+      <label for="integer2">Ransac_n: Must be an integer</label>
+      <input type="number" id="integer2" name="integer2" required><br><br>
+      <label for="integer3">Number of Iterations: Must be an integer:</label>
+      <input type="number" id="integer3" name="integer3" required><br><br>
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>
